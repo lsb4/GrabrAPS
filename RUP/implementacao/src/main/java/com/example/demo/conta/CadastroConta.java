@@ -1,6 +1,5 @@
 package com.example.demo.conta;
 
-import com.example.demo.pedido.Pedido;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -28,9 +27,5 @@ public class CadastroConta {
 
     public Conta pegarConta(String login) {
         return this.repositorioConta.pegarConta(login);
-    }
-
-    public void criarPedido(String login, Pedido pedido) {
-        this.repositorioConta.criarPedido(login, pedido);
     }
 }

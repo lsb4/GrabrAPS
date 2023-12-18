@@ -1,34 +1,31 @@
 package com.example.demo.pedido;
 
-import com.example.demo.status.Status;
-import com.example.demo.entrega.Entrega;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.HashMap;
-import java.util.Map;
-
-@Getter
+@Getter // Essa anotação inclui a função getPreço
 @Setter // Essa anotação inclui a função atualizarStatus, que seria o mesmo que setStatus
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Pedido {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String linkProduto;
 
     private Double preco;
 
     private String descricao;
 
-    private Status status;
-
-    private Entrega entrega;
-
-    private List<Oferta> ofertas;
-
-    public Double calcularValorFinal(){
-        // 1. Procurar no array de ofertas a oferta com status de aceita
-        // return this.preco + taxaDoViajante 
-    }
+    private String status;
+    
+    private String loginDono;
 }

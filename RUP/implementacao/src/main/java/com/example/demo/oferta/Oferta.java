@@ -1,23 +1,29 @@
 package com.example.demo.oferta;
 
-import com.example.demo.status.Status;
-import com.example.demo.conta.Conta;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.util.HashMap;
-import java.util.Map;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
-@Setter // Essa anotação inclui a função atualizarStatus, que seria o mesmo que setStatus
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pedido {
+@Entity
+public class Oferta {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private Double taxaDoViajante;
 
-    private Status status;
+    private String status;
     
-    private Conta ofertante;
+    private String loginOfertante;
+
+    private String idPedido;
 }

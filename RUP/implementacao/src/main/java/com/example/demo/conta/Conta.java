@@ -1,35 +1,27 @@
 package com.example.demo.conta;
 
-import com.example.demo.pedido.Pedido;
-import com.example.demo.entrega.Entrega;
 import com.example.demo.contabancaria.ContaBancaria;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 @Getter // Devido a essa anotação, não preciso 'codar' os métodos getPedidos e getEntregas
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "conta")
+@Entity
+//@Document(collection = "conta")
 public class Conta {
     @Id
     private String login;
 
     private String senha;
 
-    private String telefone;
-
-    private List<Pedido> pedidos;
-
-    private List<Entrega> entregas;
-
+    @OneToOne
     private ContaBancaria banco;
-
-    public void aceitarOferta(){
-        // Adicionar um novo pedido na lista de entregas do usuário
-    }
 }

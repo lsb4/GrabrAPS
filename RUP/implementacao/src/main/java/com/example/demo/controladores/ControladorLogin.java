@@ -16,7 +16,7 @@ public class ControladorLogin {
     }
 
     public boolean efetuarLogin(String login, String senha) {
-        if(repositorioConta.checarExistencia(login)){
+        if(repositorioConta.existe(login)){
             Conta conta = repositorioConta.pegarConta(login);
             return conta.getSenha().equals(senha);
         }
