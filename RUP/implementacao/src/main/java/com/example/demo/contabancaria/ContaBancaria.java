@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Conta {
+public class ContaBancaria {
     private String banco;
 
     private String agencia;

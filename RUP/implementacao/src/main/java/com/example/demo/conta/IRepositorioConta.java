@@ -1,8 +1,6 @@
 package com.example.demo.conta;
 
 import com.example.demo.pedido.Pedido;
-import com.example.demo.conta.Conta;
-
 import java.util.List;
 
 public interface IRepositorioConta {
